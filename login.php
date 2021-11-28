@@ -1,4 +1,19 @@
-<!DOCTYPE html>
+<?php
+     if(isset($_POST['submit']))
+     {
+         $Email=$_POST['email'];
+         $Password=$_POST['password'];
+
+         if($Email=="root" && $Password=="root")
+         {
+             header("Location:index.html");
+         }
+         else{
+             echo "invalid user";
+         }
+     }
+
+?>
 <html lang="en">
    <head>
       <!-- basic -->
@@ -42,11 +57,11 @@
                <div class="login_section">
                   <div class="logo_login">
                      <div class="center">
-                        NRI HOME SAFE
+                        <h1  class="text-warning">NRI HOME SAFE</h1>
                      </div>
                   </div>
                   <div class="login_form">
-                     <form>
+                     <form method="post">
                         <fieldset>
                            <div class="field">
                               <label class="label_field">Email Address</label>
@@ -63,7 +78,7 @@
                            </div>
                            <div class="field margin_0">
                               <label class="label_field hidden">hidden label</label>
-                              <button class="main_bt">Sing In</button>
+                              <button class="main_bt" name="submit">Sing In</button>
                            </div>
                         </fieldset>
                      </form>
